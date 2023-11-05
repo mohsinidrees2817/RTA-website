@@ -1,13 +1,227 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+@font-face {
+  font-family: 'BauzietBold';
+  src: url('./Fonts/BauzietNormBold.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+font-family: 'BauzietNormal';
+src: url('./Fonts/BauzietNormRegular.ttf');
 }
+
+/* @font-face {
+font-family: 'EuropaRegular';
+src: url('./fonts/EuropaRegular.ttf');
+} */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: BauzietBold, Archivo, BauzietNormal, Arial, sans-serif;
+  /* Add other styles as needed */
+  scroll-behavior: smooth;
+}
+
+.gradient{
+  background: linear-gradient(123.88deg, #094B72 22.33%, #1DAEFF 134.51%);
+
+}
+.App {
+  text-align: center;
+}
+
+/* .container { */
+  /* display: inline-block; Make the box inline with the text */
+  /* background: #178DD080; Background color with opacity */
+  /* padding: 5px; Adjust the padding to control the shadow size */
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4); Horizontal and vertical offset, blur radius, and shadow color */
+/* } */
+
+.shadow-box{
+  box-shadow: 0px 4px 10px 0px #094b711a;
+}
+
+.shadow-box-sm{
+  box-shadow: 0px 4px 4px 0px #094b711a;
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.breakline {
+  display: none;
+
+  @media (min-width: 450px) {
+    display: block; 
+  }
+}
+
+.custom-underline {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+
+.body{
+  overflow: hidden;
+}
+/* .container {
+  
+} */
+
+.accordion .accordion-item {
+  border-bottom: 4px dotted #e5e5e5;
+}
+
+.accordion p {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #8B8C8C;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Increased padding for large screens */
+@media (min-width: 1024px) {
+  .accordion p {
+    padding: 1.5em 0; /* Adjust the padding value as needed */
+  }
+}
+
+.accordion p:hover,
+.accordion p:focus {
+  cursor: pointer;
+  color: #8B8C8C;
+}
+
+.accordion p:hover::after,
+.accordion p:focus::after {
+  cursor: pointer;
+  color: #8B8C8C;
+  border: 1px solid #8B8C8C;
+}
+
+/* .accordion p .accordion-title {
+  padding: 1em 1.5em 1em 0;
+} */
+
+.accordion p .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion p .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion p .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion p[aria-expanded='true'] {
+  color: #8B8C8C;
+}
+.accordion p[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion p[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 700ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 700ms linear, max-height 700ms linear;
+  will-change: opacity, max-height;
+  text-align: left;
+  color: #8B8C8C;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0 1em 0;
+}
+
+textarea {
+  border: none;
+  resize: none;
+}
+.lightfont{
+  font-weight: 300;
+}
+
+
+
+/* nav hover */
+/* Add this CSS code to your stylesheet or <style> tag in your HTML file */
+.li {
+  position: relative;
+}
+
+.li:after {
+  bottom: -1px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  opacity: 0.6;
+  transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+  width: 0;
+}
+
+.li:hover:after {
+  width: 100%;
+  opacity: 0.9;
+}
+
